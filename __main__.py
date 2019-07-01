@@ -64,7 +64,7 @@ def crawling_nene():
     before_page_first_shop = ''
 
     # for page in count(start=1):
-    for page in range(1, 3):
+    for page in range(1, 2):
         url = 'https://nenechicken.com/17_new/sub_shop01.asp?ex_select=1&ex_select2=&IndexSword=&GUBUN=A&page=%d' % page
 
         try:
