@@ -1,3 +1,4 @@
+import os
 import ssl
 import sys
 import time
@@ -5,13 +6,14 @@ from datetime import datetime
 from itertools import count
 from urllib.request import Request, urlopen
 
-import pandas as pd
+# import pandas as pd
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
 from collection import crawler
 
-BASE_DIR = f''
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 
 def crawling_pelicana():
     results = []
@@ -52,8 +54,8 @@ def crawling_pelicana():
             results.append(t)
 
     # store
-    table = pd.DataFrame(results, columns=['name', 'address', 'sido', 'gu'])
-    table.to_csv('__results__/pelicana.csv', encoding='utf-8', mode='w', index=True)
+    # table = pd.DataFrame(results, columns=['name', 'address', 'sido', 'gu'])
+    # table.to_csv('__results__/pelicana.csv', encoding='utf-8', mode='w', index=True)
 
     # for t in results:
     #     print(t)
@@ -110,11 +112,11 @@ def crawling_nene():
             results.append(t)
 
     # store
-    table = pd.DataFrame(results, columns=['name', 'address', 'sido', 'gu'])
-
+    # table = pd.DataFrame(results, columns=['name', 'address', 'sido', 'gu'])
+    print('nene 끝')
     # RESULT_DIR = f'{BASE_DIR}/__results__/nene.csv'
     # table.to_csv(RESULT_DIR, encoding='utf-8', mode='w', index=True)
-    table.to_csv('/root/crawling-results/nene.csv', encoding='utf-8', mode='w', index=True)
+    # table.to_csv('/root/crawling-results/nene.csv', encoding='utf-8', mode='w', index=True)
 
 
 def ex01():
@@ -146,8 +148,8 @@ def ex01():
             results.append(t)
 
     # store
-    table = pd.DataFrame(results, columns=['name', 'address', 'sido', 'gu'])
-    table.to_csv('__results__/pelicana.csv', encoding='utf-8', mode='w', index=True)
+    # table = pd.DataFrame(results, columns=['name', 'address', 'sido', 'gu'])
+    # table.to_csv('__results__/pelicana.csv', encoding='utf-8', mode='w', index=True)
 
     # for t in results:
     #     print(t)
@@ -220,8 +222,8 @@ def crawling_goobne():
     wd.quit()
 
     # store
-    table = pd.DataFrame(results, columns=['name', 'address', 'sido', 'gu'])
-    table.to_csv('__results__/goobne.csv', encoding='utf-8', mode='w', index=True)
+    # table = pd.DataFrame(results, columns=['name', 'address', 'sido', 'gu'])
+    # table.to_csv('__results__/goobne.csv', encoding='utf-8', mode='w', index=True)
 
     for result in results:
         print(result)
