@@ -11,6 +11,7 @@ from selenium import webdriver
 
 from collection import crawler
 
+BASE_DIR = f''
 
 def crawling_pelicana():
     results = []
@@ -110,7 +111,10 @@ def crawling_nene():
 
     # store
     table = pd.DataFrame(results, columns=['name', 'address', 'sido', 'gu'])
-    table.to_csv('__results__/nene.csv', encoding='utf-8', mode='w', index=True)
+
+    # RESULT_DIR = f'{BASE_DIR}/__results__/nene.csv'
+    # table.to_csv(RESULT_DIR, encoding='utf-8', mode='w', index=True)
+    table.to_csv('/root/crawling-results/nene.csv', encoding='utf-8', mode='w', index=True)
 
 
 def ex01():
